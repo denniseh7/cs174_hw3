@@ -1,15 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Dennis
- * Date: 4/6/2016
- * Time: 1:26 AM
+ *Dennis Hsu
+ *CS 174 Homework 3
+ * Index.php Page for User
  */
 
 namespace dennis\hw3;
-
-
-class index
-{
-
-}
