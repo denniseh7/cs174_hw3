@@ -7,18 +7,19 @@
 
 namespace dennis\hw3;
 
-$logged=false;
+session_start();
 
 use dennis\hw3\controllers as C;
 
-if ($logged) {
-    require_once("./src/controllers/defaultController.php");
 
-    $main = new C\defaultController();
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true) {
+    require_once("./src/controllers/loggedinController.php");
+    $main = new C\loggedinController();
     $main->maincontrol();
 } else {
-    $main = new C\loggedController();
+    require_once("./src/controllers/defaultController.php");
+    $main = new C\defaultController();
 
     $main->maincontrol();
 }

@@ -6,7 +6,7 @@
  * Time: 11:48 PM
  */
 
-namespace dennis\hw3\elements;
+namespace dennis\hw3\views\elements;
 
 
 abstract class baseElement

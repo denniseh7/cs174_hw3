@@ -6,7 +6,7 @@
  * Time: 11:56 PM
  */
 
-namespace dennis\hw3\helpers;
+namespace dennis\hw3\views\helpers;
 
 
 abstract class baseHelper

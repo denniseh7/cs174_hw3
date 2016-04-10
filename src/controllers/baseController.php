@@ -11,5 +11,5 @@ namespace dennis\hw3\controllers;
 
 abstract class baseController
 {
-
+    abstract public function maincontrol();
 }

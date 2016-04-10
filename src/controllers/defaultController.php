@@ -8,16 +8,25 @@
 
 namespace dennis\hw3\controllers;
 
+include ('baseController.php');
 
-class mainController extends baseController
+use dennis\hw3 as H;
+
+
+
+class defaultController extends baseController
 {
     function __construct()
     {
 
     }
 
-    function maincontrol()
+    public function maincontrol()
     {
 
+        require_once('./src/views/mainView.php');
+        $mainRender = new H\views\mainView();
+
+        $mainRender->render(null);
     }
 }

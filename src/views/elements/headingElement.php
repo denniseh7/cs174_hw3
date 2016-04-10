@@ -6,8 +6,9 @@
  * Time: 11:50 PM
  */
 
-namespace dennis\hw3\elements;
+namespace dennis\hw3\views\elements;
 
+require_once('baseElement.php');
 
 class headingElement extends baseElement
 {

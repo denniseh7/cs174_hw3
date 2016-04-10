@@ -11,5 +11,5 @@ namespace dennis\hw3\views;
 
 abstract class baseView
 {
-
+    abstract public function render($data);
 }
