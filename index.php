@@ -7,13 +7,19 @@
 
 namespace dennis\hw3;
 
+$logged=false;
 
+use dennis\hw3\controllers as C;
 
-use dennis\hw3\controllers\mainController;
+if ($logged) {
+    require_once("./src/controllers/defaultController.php");
 
-require_once("./src/controllers/mainController.php");
+    $main = new C\defaultController();
 
-$main = new mainController();
+    $main->maincontrol();
+} else {
+    $main = new C\loggedController();
 
-$main->maincontrol();
+    $main->maincontrol();
+}
 
