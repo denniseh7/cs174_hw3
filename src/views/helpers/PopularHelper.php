@@ -39,7 +39,7 @@ class PopularHelper extends Helper
 
 
             ?> <img src="<?php
-            echo($imagename); ?>"></img><p>Caption: <?php
+            echo($imagename); ?>">Test Image</img><p>Caption: <?php
             echo($row[3].' Rating '.$row[1].'User: '.$row[4].' Date: '.$row[2]);
 
             ?></p><?php
@@ -49,6 +49,7 @@ class PopularHelper extends Helper
                 break;
             }
         }
+        ?><img src="./src/resources/Cyberpunk_1.jpg"><img><?php
     }
 
     public function resize($filename){
