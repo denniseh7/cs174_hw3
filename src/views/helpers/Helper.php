@@ -9,7 +9,7 @@
 namespace dennis\hw3\views\helpers;
 
 
-abstract class baseHelper
+abstract class Helper
 {
 
 }

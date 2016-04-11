@@ -8,13 +8,13 @@
 
 namespace dennis\hw3\controllers;
 
-include ('baseController.php');
+include('Controller.php');
 
 use dennis\hw3 as H;
 
 
 
-class defaultController extends baseController
+class defaultController extends Controller
 {
     function __construct()
     {

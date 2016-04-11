@@ -9,9 +9,9 @@
 namespace dennis\hw3\views;
 use dennis\hw3\views\elements as E;
 
-require_once('baseView.php');
+require_once('View.php');
 
-class mainView extends baseView
+class mainView extends View
 {
     public function render($data){
         ?>
@@ -26,6 +26,14 @@ class mainView extends baseView
                 require_once("elements/headingElement.php");
                 $heading = new E\headingElement();
                 $heading->render(null);
+
+                require_once("elements/recentElement.php");
+                $recent = new E\recentElement();
+                $recent->render(null);
+
+                require_once("elements/popularElement.php");
+                $popular = new E\popularElement();
+                $popular->render(null);
             ?>
         </body>
         </html>

@@ -9,7 +9,7 @@
 namespace dennis\hw3\views\elements;
 
 
-abstract class baseElement
+abstract class Element
 {
-
+    abstract public function render($data);
 }

@@ -8,12 +8,12 @@
 
 namespace dennis\hw3\controllers;
 
-require_once('baseController.php');
+require_once('Controller.php');
 
-class loggedinController extends baseController
+class loggedinController extends Controller
 {
     public function maincontrol()
     {
-        
+
     }
 }

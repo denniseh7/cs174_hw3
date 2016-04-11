@@ -9,7 +9,7 @@
 namespace dennis\hw3\models;
 
 
-abstract class baseModel
+abstract class Model
 {
-
+    public $config;
 }

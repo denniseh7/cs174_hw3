@@ -8,9 +8,9 @@
 
 namespace dennis\hw3\views\elements;
 
-require_once('baseElement.php');
+require_once('Element.php');
 
-class headingElement extends baseElement
+class headingElement extends Element
 {
     public function render($data){
         ?> <h1>Image Rating</h1> <?php
