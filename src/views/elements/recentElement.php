@@ -20,9 +20,9 @@ class recentElement extends Element
             <div>
                 <h2>Recent</h2>
                 <?php
-                    require("./src/views/helpers/RecentHelper.php");
-                    $imageHelp = new V\helpers\PopularHelper();
-                    $imageHelp->render($data);
+                    require_once("./src/views/helpers/RecentHelper.php");
+                $recent= new V\helpers\RecentHelper();
+                $recent->render($data);
                 ?>
             </div>
         <?php

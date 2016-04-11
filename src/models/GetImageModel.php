@@ -18,7 +18,7 @@ class GetImageModel
 
         $con=mysqli_connect($config['host'],$config['username'],$config['password'],$config['database']);
 
-        $query='SELECT imagename,average,date FROM Image ORDER BY average DESC';
+        $query='SELECT imagename,average,date,caption,username FROM Image,User WHERE Image.userID=User.userID ORDER BY average DESC';
 
         $result=mysqli_query($con,$query);
 
