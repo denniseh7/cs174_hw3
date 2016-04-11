@@ -38,12 +38,13 @@ Values(null,"student","password"),
 (null,"s2","p2");
 
 INSERT INTO Image 
-Values(null,1,"1.jpg",4.3,"2016-04-11 06:02:11","test"),
-(null,2,"2.jpg",4.7,"2016-04-11 06:02:12", "test2"),
-(null,3,"3.jpg",2.0,"2016-04-11 06:02:13", "test3"),
-(null,1,"4.jpg",2.0,"2016-04-11 06:02:14", "test4"),
-(null,2,"5.jpg",4.0,"2016-04-11 06:02:10", "test5"),
-(null,3,"6.jpg",3.0,now(), "test6");
+Values(null,1,"Cyberpunk_1.jpg",4.3,"2016-04-11 06:02:11","test"),
+(null,2,"Cyberpunk_2.jpg",4.7,"2016-04-11 06:02:12", "test2"),
+(null,3,"Cyberpunk_3.jpg",2.0,"2016-04-11 06:02:13", "test3"),
+(null,1,"Cyberpunk_4.jpg",2.0,"2016-04-11 06:02:14", "test4"),
+(null,2,"Cyberpunk_5.jpg",4.0,"2016-04-11 06:02:10", "test5"),
+(null,3,"Cyberpunk_8.jpg",3.0,now(), "test6");
+
 
 INSERT INTO ImageRating
 Values(1,1,4),(1,2,5),(1,3,1),(1,4,2),(1,5,3),(1,6,4),

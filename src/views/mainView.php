@@ -27,6 +27,10 @@ class mainView extends View
                 $heading = new E\headingElement();
                 $heading->render(null);
 
+                require_once("elements/signinLinkElement.php");
+                $signinlink = new E\signinLinkElement();
+                $signinlink->render(null);
+
                 require_once("elements/recentElement.php");
                 $recent = new E\recentElement();
                 $recent->render($data);

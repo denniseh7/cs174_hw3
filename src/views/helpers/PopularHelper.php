@@ -19,7 +19,7 @@ class PopularHelper extends Helper
             $imagename="./src/resources/".$row[0];
             $image=imagecreatefromjpeg($imagename);
 
-            //check exif data for orientation
+            //check exif data for orientation and change
             $exif=exif_read_data($imagename);
             if(!empty($exif['Orientation'])) {
                 switch ($exif['Orientation']) {
@@ -35,34 +35,29 @@ class PopularHelper extends Helper
                 }
             }
 
-            imagejpeg($image,$imagename);
+            //change size
+            list($width, $height) = getimagesize($imagename);
+            $newwidth = 500;
+            $newheight = $height*500/$width;
+
+            $src = $image;
+            $dst = imagecreatetruecolor($newwidth, $newheight);
+            imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            imagejpeg($dst,$imagename);//write new size and orientation image to file
 
 
             ?> <img src="<?php
-            echo($imagename); ?>">Test Image</img><p>Caption: <?php
+            echo($imagename); ?>"></img><p>Caption: <?php
             echo($row[3].' Rating '.$row[1].'User: '.$row[4].' Date: '.$row[2]);
 
             ?></p><?php
 
+            //stop after 10 images
             $i++;
             if ($i>=10){
                 break;
             }
         }
-        ?><img src="./src/resources/Cyberpunk_1.jpg"><img><?php
     }
 
-    public function resize($filename){
-        header('Content-Type: image/jpeg');
-
-        list($width, $height) = getimagesize($filename);
-
-        if($width != 500) {
-            $new_width = 500;
-            $new_height = $height*500/$width;
-            $image_p = imagecreatetruecolor($new_width, $new_height);
-            $image=$image = imagecreatefromjpeg($filename);
-            imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
-        }
-    }
 }
