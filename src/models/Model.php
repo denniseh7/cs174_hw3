@@ -11,5 +11,5 @@ namespace dennis\hw3\models;
 
 abstract class Model
 {
-    public $config;
+
 }

@@ -8,11 +8,10 @@
 
 namespace dennis\hw3\models;
 
+require_once("Model.php");
 
-class GetImageModel
+class GetImageModel extends Model
 {
-    public $config;
-
     public function getData(){
         $config = include("./src/configs/config.php");
 

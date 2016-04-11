@@ -8,8 +8,34 @@
 
 namespace dennis\hw3\views;
 
+require_once("View.php");
 
-class SignInView
+class SignInView extends View
 {
-
+    public function render($data)
+    {
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>Sign In</title>
+        <body>
+        <div class="SignInForm">
+        <h1 class="ImageSignIn">ImageRating SignIn</h1>
+        <form name="Signinform" id="Signinform" action="../controllers/SignInController.php" method="post">
+                <label for="username">UserName: </label>
+                <input type="text" name="uname"/>
+                <label for="pwd">Password: </label>
+                <input type="text" name="pwd"/>
+            <input type="submit" value="Go"/>
+        </form>
+        </div>
+    <?php
+    }
 }
+
+$signin = new SignInView();
+
+$signin->render(null);
+
