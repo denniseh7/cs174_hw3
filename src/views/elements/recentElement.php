@@ -8,6 +8,8 @@
 
 namespace dennis\hw3\views\elements;
 
+use dennis\hw3\views as V;
+
 require_once('Element.php');
 
 class recentElement extends Element
@@ -17,7 +19,11 @@ class recentElement extends Element
         ?>
             <div>
                 <h2>Recent</h2>
-                <?php ?>
+                <?php
+                    require("./src/views/helpers/RecentHelper.php");
+                    $imageHelp = new V\helpers\PopularHelper();
+                    $imageHelp->render($data);
+                ?>
             </div>
         <?php
     }

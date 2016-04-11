@@ -29,11 +29,11 @@ class mainView extends View
 
                 require_once("elements/recentElement.php");
                 $recent = new E\recentElement();
-                $recent->render(null);
+                $recent->render($data);
 
                 require_once("elements/popularElement.php");
                 $popular = new E\popularElement();
-                $popular->render(null);
+                $popular->render($data);
             ?>
         </body>
         </html>

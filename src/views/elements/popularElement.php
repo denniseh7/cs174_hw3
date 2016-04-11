@@ -8,6 +8,7 @@
 
 namespace dennis\hw3\views\elements;
 
+use dennis\hw3\views as V;
 require_once('Element.php');
 
 class popularElement extends Element
@@ -17,7 +18,11 @@ class popularElement extends Element
         ?>
             <div>
                 <h2>Popular</h2>
-                <?php  ?>
+                <?php
+                    require("./src/views/helpers/Popular.php");
+                    $imageHelp = V\helpers\PopularHelper();
+                    $imageHelp->render($data);
+                ?>
             </div>
         <?php
     }

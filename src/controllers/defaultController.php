@@ -27,6 +27,15 @@ class defaultController extends Controller
         require_once('./src/views/mainView.php');
         $mainRender = new H\views\mainView();
 
-        $mainRender->render(null);
+        require_once('./src/models/GetImageModel.php');
+        $imagedata = new H\models\GetImageModel();
+        $data=$imagedata->getData();
+        $arr=array();
+        while($row=mysqli_fetch_array($data))
+        {
+            $arr[]=$row;
+        }
+
+        $mainRender->render($arr);
     }
 }

@@ -6,10 +6,22 @@
  * Time: 10:37 AM
  */
 
-namespace cs174_hw3\src\models;
+namespace dennis\hw3\models;
 
 
 class GetImageModel
 {
+    public $config;
 
+    public function getData(){
+        $config = include("./src/configs/config.php");
+
+        $con=mysqli_connect($config['host'],$config['username'],$config['password'],$config['database']);
+
+        $query='SELECT imagename,average,date FROM Image ORDER BY average DESC';
+
+        $result=mysqli_query($con,$query);
+
+        return $result;
+    }
 }
