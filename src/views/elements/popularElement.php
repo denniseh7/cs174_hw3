@@ -19,8 +19,8 @@ class popularElement extends Element
             <div>
                 <h2>Popular</h2>
                 <?php
-                    require("./src/views/helpers/Popular.php");
-                    $imageHelp = V\helpers\PopularHelper();
+                    require("./src/views/helpers/PopularHelper.php");
+                    $imageHelp = 
                     $imageHelp->render($data);
                 ?>
             </div>
