@@ -14,6 +14,7 @@ class SignInView extends View
 {
     public function render($data)
     {
+        session_start();
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -30,8 +31,13 @@ class SignInView extends View
                 <input type="text" name="pwd"/>
             <input type="submit" value="Go"/>
         </form>
+            <a href="../../index.php">Home Page</a>
         </div>
     <?php
+
+        if(isset($_SESSION['signin'])){
+            ?><div>Please Enter Correct UserName or Password</div><?php
+        }
     }
 }
 

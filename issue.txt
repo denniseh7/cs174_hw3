@@ -1,0 +1,10 @@
+
+Finished:
+Upload Image
+resize image
+output view with caption, date, image, etc.
+
+TBD:
+SignIn
+Signout
+Rating

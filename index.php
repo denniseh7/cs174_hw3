@@ -11,7 +11,8 @@ session_start();
 
 use dennis\hw3\controllers as C;
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true) {
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true && $_SESSION['userID']!=null) {
     require_once("./src/controllers/loggedinController.php");
     $main = new C\loggedinController();
     $main->maincontrol();

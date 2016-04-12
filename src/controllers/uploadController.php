@@ -17,6 +17,7 @@ class uploadController extends Controller
     public function maincontrol()
     {
         session_start();
+        echo($_SESSION['userID']);
         $dir = "../resources/";
         echo($_FILES["fileToUpload"]["tmp_name"]);
         $basefile=basename($_FILES["fileToUpload"]["name"]);

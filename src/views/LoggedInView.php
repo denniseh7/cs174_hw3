@@ -35,16 +35,16 @@ class LoggedInView extends View
         $upload = new E\uploadImage();
         $upload->render($_SESSION['userID']);
 
-        require_once("elements/signinLinkElement.php");
-        $signinlink = new E\signinLinkElement();
+        require_once("elements/signoutLinkElement.php");
+        $signinlink = new E\signoutLinkElement();
         $signinlink->render(null);
 
-        require_once("elements/recentElement.php");
-        $recent = new E\recentElement();
+        require_once("elements/loggedRecentElement.php");
+        $recent = new E\loggedRecentElement();
         $recent->render($data);
 
-        require_once("elements/popularElement.php");
-        $popular = new E\popularElement();
+        require_once("elements/loggedPopularElement.php");
+        $popular = new E\loggedPopularElement();
         $popular->render($data);
         ?>
         </body>
