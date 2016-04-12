@@ -14,15 +14,17 @@ require_once('Element.php');
 
 class loggedRecentElement
 {
-    public function render($data)
+    public function render($data){}
+
+    public function renderlogged($data,$rated)
     {
         ?>
         <div>
-            <h2>Logged Recent</h2>
+            <h2>Recent</h2>
             <?php
-            require_once("./src/views/helpers/RecentHelper.php");
-            $recent= new V\helpers\RecentHelper();
-            $recent->render($data);
+            require_once("./src/views/helpers/LoggedRecentHelper.php");
+            $recent= new V\helpers\LoggedRecentHelper();
+            $recent->renderlogged($data,$rated);
             ?>
         </div>
         <?php

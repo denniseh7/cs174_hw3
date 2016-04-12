@@ -17,16 +17,15 @@ class uploadController extends Controller
     public function maincontrol()
     {
         session_start();
-        echo($_SESSION['userID']);
+
         $dir = "../resources/";
-        echo($_FILES["fileToUpload"]["tmp_name"]);
+
         $basefile=basename($_FILES["fileToUpload"]["name"]);
         $filelocation = $dir.$basefile;
 
 
         $allowedType=IMAGETYPE_JPEG;
         $detectedType = exif_imagetype($_FILES['fileToUpload']["tmp_name"]);
-        echo($detectedType);
 
         if($detectedType != $allowedType){
             require("../views/uploadView.php");

@@ -13,15 +13,16 @@ require_once('Element.php');
 
 class loggedPopularElement extends Element
 {
-    public function render($data)
+    public function render($data){}
+    public function renderlogged($data,$rated)
     {
         ?>
         <div>
-            <h2>Logged Popular</h2>
+            <h2>Popular</h2>
             <?php
-            require_once("./src/views/helpers/PopularHelper.php");
-            $popular= new V\helpers\PopularHelper();
-            $popular->render($data);
+            require_once("./src/views/helpers/LoggedPopularHelper.php");
+            $recent= new V\helpers\LoggedPopularHelper();
+            $recent->renderlogged($data,$rated);
             ?>
         </div>
         <?php

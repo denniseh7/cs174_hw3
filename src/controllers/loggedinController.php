@@ -27,6 +27,11 @@ class loggedinController extends Controller
             $arr[]=$row;
         }
 
-        $mainRender->render($arr);
+        require_once('./src/models/GetRatedModel.php');
+
+        $userrated= new H\models\GetRatedModel();
+        $rated = $userrated->getData();
+
+        $mainRender->renderlogged($arr,$rated);
     }
 }

@@ -48,7 +48,7 @@ class PopularHelper extends Helper
 
             ?> <img src="<?php
             echo($imagename); ?>"></img><p>Caption: <?php
-            echo($row[3].' Rating '.$row[1].'User: '.$row[4].' Date: '.$row[2]);
+            echo($row[3].' Average Rating '.$row[1].' Uploader: '.$row[4].' Date: '.$row[2]);
 
             ?></p><?php
 

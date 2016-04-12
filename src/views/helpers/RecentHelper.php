@@ -20,14 +20,13 @@ class RecentHelper
         array_multisort($sort_col,SORT_DESC,$data);
 
         $i=0;
-        foreach($data as $row)
-        {
-            $imagename="./src/resources/".$row[0];
-            $image=imagecreatefromjpeg($imagename);
+        foreach($data as $row) {
+            $imagename = "./src/resources/" . $row[0];
+            $image = imagecreatefromjpeg($imagename);
 
             //check exif data for orientation and change
-            $exif=exif_read_data($imagename);
-            if(!empty($exif['Orientation'])) {
+            $exif = exif_read_data($imagename);
+            if (!empty($exif['Orientation'])) {
                 switch ($exif['Orientation']) {
                     case 8:
                         $image = imagerotate($image, 90, 0);
@@ -43,18 +42,18 @@ class RecentHelper
 
             //change size
             list($width, $height) = getimagesize($imagename);
-            $newwidth = 500;
-            $newheight = $height*500/$width;
+            if ($width !=500){
+                $newwidth = 500;
+                $newheight = $height * 500 / $width;
 
-            $src = $image;
-            $dst = imagecreatetruecolor($newwidth, $newheight);
-            imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-            imagejpeg($dst,$imagename);//write new size and orientation image to file
+                $src = $image;
+                $dst = imagecreatetruecolor($newwidth, $newheight);
+                imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+                imagejpeg($dst, $imagename);//write new size and orientation image to file
+            }
 
-
-            ?> <img src="<?php
-        echo($imagename); ?>"></img><p>Caption: <?php
-            echo($row[3].' Rating '.$row[1].'User: '.$row[4].' Date: '.$row[2]);
+            ?> <img src=<?php echo($imagename); ?>><p>Caption: <?php
+            echo($row[3].' Rating '.$row[1].' Uploader: '.$row[4].' Date: '.$row[2]);
 
             ?></p><?php
 

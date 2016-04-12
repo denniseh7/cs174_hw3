@@ -17,7 +17,7 @@ userID INT,
 imagename VARCHAR(50) NOT NULL UNIQUE,
 average FLOAT DEFAULT 0,
 date TIMESTAMP,
-caption VARCHAR(50) NOT NULL Default 'image',
+caption VARCHAR(200) NOT NULL Default 'image',
 PRIMARY KEY(imageID),
 FOREIGN KEY(userID) REFERENCES User(userID)
 );
@@ -48,5 +48,5 @@ Values(null,1,"Cyberpunk_1.jpg",4.3,"2016-04-11 06:02:11","test"),
 
 INSERT INTO ImageRating
 Values(1,1,4),(1,2,5),(1,3,1),(1,4,2),(1,5,3),(1,6,4),
-(2,1,5),(2,2,4),(2,3,3),(2,4,2),(2,5,5),(2,6,2),
+(2,1,5),(2,2,4),(2,3,3),(2,6,2),
 (3,1,4),(3,2,5);

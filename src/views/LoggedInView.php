@@ -18,6 +18,10 @@ class LoggedInView extends View
 {
     public function render($data){
 
+    }
+
+    public function renderlogged($data,$rated){
+
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -41,11 +45,11 @@ class LoggedInView extends View
 
         require_once("elements/loggedRecentElement.php");
         $recent = new E\loggedRecentElement();
-        $recent->render($data);
+        $recent->renderlogged($data,$rated);
 
         require_once("elements/loggedPopularElement.php");
         $popular = new E\loggedPopularElement();
-        $popular->render($data);
+        $popular->renderlogged($data,$rated);
         ?>
         </body>
         </html>

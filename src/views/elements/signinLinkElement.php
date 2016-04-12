@@ -14,7 +14,7 @@ class signinLinkElement extends Element
     public function render($data){
         ?>
             <a href="./src/views/SignInView.php">SignIn</a>
-            <a href="./SignInView.php">SignUp</a>
+            <a href="./src/views/SignUpView.php">SignUp</a>
         <?php
     }
 }
