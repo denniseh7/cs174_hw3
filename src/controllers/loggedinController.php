@@ -7,6 +7,7 @@
  */
 
 namespace dennis\hw3\controllers;
+use dennis\hw3 as H;
 
 require_once('Controller.php');
 
@@ -14,9 +15,7 @@ class loggedinController extends Controller
 {
     public function maincontrol(){
 
-        session_start();
-
-        require_once('./src/views/mainView.php');
+        require_once('./src/views/loggedInView.php');
         $mainRender = new H\views\LoggedInView();
 
         require_once('./src/models/GetImageModel.php');
